@@ -1,7 +1,8 @@
 from flask import Flask,flash, redirect, render_template, request, url_for,session
 import psycopg2
 try:
-    conn=psycopg2.connect("dbname='huddle' user='postgres' host='localhost' password='vicciSQL'")
+    # conn=psycopg2.connect("dbname='huddle' user='postgres' host='localhost' password='vicciSQL'")
+    conn=psycopg2.connect("dbname='' user='' port='' host='' password=''")
     print("Successful D.B Connection")
 except:
     print("Connection error!")
