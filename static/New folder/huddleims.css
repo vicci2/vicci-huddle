@@ -1,0 +1,21 @@
+.topnav{ color: black; align-items: center;border-radius: 5px ; align-content:center; background-color: slategrey; opacity: 75%;display: flex;justify-content:space-between;}
+body{background-image: url(/static/images/IMG-20211216-WA0002.jpg);background-color: hsl(257, 40%,49%);background-blend-mode: overlay;background-repeat: no-repeat;background-attachment:fixed;background-size:100% 100%;}
+button{transition: 0.5s;overflow: hidden; font-family: Georgia, 'Times New Roman', Times, serif; color: lightseagreen;border: none;background-color: dimgray; border-radius: 24px; padding: 10pt; width: 50%;}
+button:hover{border: deepskyblue 2px solid;}
+#btn:hover{border: deepskyblue 2px solid;}
+#btn1:hover{border: deepskyblue 2px solid;}
+#btn{ width: 50%;margin-left: 52%;transform: translateY(-100%);}
+#btn1{margin-left: 27%;transform: translateY(-70%);}
+p{color: grey;}
+.container{display: flex;margin: auto;margin-top: 9%;margin-bottom: 10%;margin-left: 5%;}
+.right{padding-left: 5%;font-family: 'Courier New', Courier, monospace;position: relative;margin-left: 4%; ;margin-top: 5%;}
+#h2{color: dimgrey; padding-left: 10%;font-family: 'Courier New', Courier, monospace;}
+#span{color: gold;font-family: sans-serif;font-style: oblique;font-weight: 100;}
+#p1{font-family: 'Times New Roman', Times, serif;}
+#p2{text-align: right;margin-right: 10%;}
+#whatap{width:3%;height: 3%;border-radius: 100%;}
+
+@media only screen and (max-width: 960px) {
+    body{display:flex;flex-direction: column;}
+    .container{transform: translateY(500px);}
+}
