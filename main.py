@@ -1,16 +1,24 @@
 from flask import Flask,flash, redirect, render_template, request, url_for,session
 import psycopg2
-from datetime import timedelta
+from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField, EmailField, SubmitField, BooleanField
+from wtforms.validators import InputRequired,DataRequired, EqualTo, Length
+from flask_login import UserMixin, login_user, login_manager,login_required,logout_user, current_user
+# from datetime import datetime
 
 app =Flask(__name__)
 app.secret_key="123secrete kye"
-app.permanent_session_lifetime=timedelta(minutes=10)
+# app.permanent_session_lifetime=timedelta(minutes=10)
 try:
     conn=psycopg2.connect("dbname='huddle' user='postgres' host='localhost' password='vicciSQL'")
     # conn=psycopg2.connect("dbname='d4augsl57bdont' user='epbnudknwnktpp' port='5432' host='ec2-34-199-15-136.compute-1.amazonaws.com' password='863b87226bd0eafa17748cc14d4bdcb0af464d40c35796f8bf38cce8dc378153'")
     print("Successful D.B Connection")
 except:
     print("Connection error!")
+
+class LoginForm(FlaskForm):
+    username=StringField('username',validators=[InputRequired(),Length(min=4, max=80)] )
+    username=PasswordField('password',validators=[InputRequired(),Length(min=4, max=80)] )
 
 @app.route('/')
 def ims():
@@ -38,6 +46,7 @@ def reg():
         flash("Registration successful!")
         return redirect(url_for('ims'))
     else:        
+        flash("Please enter user details.")
         return render_template("huddlereg.html")
 
 @app.route('/log_in',methods=["post"])
@@ -45,14 +54,17 @@ def log_in():
     cur=conn.cursor()
     user_name=request.form["user_name"]
     password=request.form["password"]
+    query=""
+    cur.execute(query)
     if user_name==user_name:
         print("hbbvhjv")
     else:
        print("pasdjskjfvf")
     data=(user_name,password)
-    cur.execute(data)
+    
     conn.commit()
-    return redirect(url_for('chat')) 
+    return redirect(url_for('chat'))
+    
 
 @app.route('/chatroom')
 def chat():
@@ -61,4 +73,5 @@ def chat():
 @app.route('/comments')
 def coments():
     return render_template("chatrrom.html")
-app.run(debug=True)
+if __name__ == '__main__':    
+    app.run(debug=True)
