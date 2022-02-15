@@ -13,6 +13,16 @@
     <title>Chatroom</title>
 </head>
 <body>
+    <p>WELCOME Username</p>
+    <div class="msg">
+        {% with messages = get_flashed messages() %}
+            % if messages %}
+                {% for msg in messages %}
+                    <p style="color: brown;">{{msg}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}</div>
+    
     <p style="font-weight: 300; color: rgb(5, 189, 221);">
         This is how I envision the huddle Aaplication Interface.Leave a comment in the comment section on your thoughts of it.And I'll make the necessary changes before the App's deployment.See you soon.<span style="font-weight: 500;" id="span">#Lets</span>Huddle<span style="font-weight: 500;" id="span">Up</span>
     </p>
