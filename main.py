@@ -1,18 +1,20 @@
 from flask import Flask,flash, redirect, render_template, request, url_for,session
 import psycopg2
+from datetime import timedelta
+
+app =Flask(__name__)
+app.secret_key="123secrete kye"
+app.permanent_session_lifetime=timedelta(minutes=10)
 try:
-    # conn=psycopg2.connect("dbname='huddle' user='postgres' host='localhost' password='vicciSQL'")
-    conn=psycopg2.connect("dbname='d4augsl57bdont' user='epbnudknwnktpp' port='5432' host='ec2-34-199-15-136.compute-1.amazonaws.com' password='863b87226bd0eafa17748cc14d4bdcb0af464d40c35796f8bf38cce8dc378153'")
+    conn=psycopg2.connect("dbname='huddle' user='postgres' host='localhost' password='vicciSQL'")
+    # conn=psycopg2.connect("dbname='d4augsl57bdont' user='epbnudknwnktpp' port='5432' host='ec2-34-199-15-136.compute-1.amazonaws.com' password='863b87226bd0eafa17748cc14d4bdcb0af464d40c35796f8bf38cce8dc378153'")
     print("Successful D.B Connection")
 except:
     print("Connection error!")
 
-app =Flask(__name__)
-app.secret_key="123secrete kye"
-
 @app.route('/')
 def ims():
-    return render_template("huddleims.html")
+    return render_template("index.html")
 
 @app.route('/register',methods=["GET","POST"])
 def reg():
@@ -41,8 +43,8 @@ def reg():
 @app.route('/log_in',methods=["post"])
 def log_in():
     cur=conn.cursor()
-    user_name=request.form('user_name')
-    password=request.form("password")
+    user_name=request.form["user_name"]
+    password=request.form["password"]
     if user_name==user_name:
         print("hbbvhjv")
     else:
@@ -50,7 +52,7 @@ def log_in():
     data=(user_name,password)
     cur.execute(data)
     conn.commit()
-    # return redirect(url_for('chat')) 
+    return redirect(url_for('chat')) 
 
 @app.route('/chatroom')
 def chat():
