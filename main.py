@@ -36,7 +36,7 @@ def reg():
         phone_number=request.form["phone_number"]
         second_phone_number=request.form["second_phone_number"]
         email_address=request.form["email_address"] 
-        query="INSERT INTO public.login (user_name, age, password,phone_number, second_phone_number, email_address) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s);"
+        query="INSERT INTO public.login (user_name, age, password,phone_number, second_phone_number, email_address) VALUES (%s,%s,%s,%s,%s,%s);"
         row=(user_name,age,password,phone_number,second_phone_number,email_address)
         cur.execute(query,row)
         conn.commit()
