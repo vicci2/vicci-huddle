@@ -11,8 +11,8 @@ app =Flask(__name__)
 app.secret_key="123secrete kye"
 # app.permanent_session_lifetime=timedelta(minutes=10)
 try:
-    conn=psycopg2.connect("dbname='huddle' user='postgres' host='localhost' password='vicciSQL'")
-    # conn=psycopg2.connect("dbname='dk28dn22dcnb2' user='lwbdaaftujgejr' port='5432' host='ec2-54-194-147-61.eu-west-1.compute.amazonaws.com' password='cda07fc755061b7a120e7fa2d8f6144dc6268aa98131ef59eeefe2fa3d32da00'")
+    # conn=psycopg2.connect("dbname='huddle' user='postgres' host='localhost' password='vicciSQL'")
+    conn=psycopg2.connect("dbname='dk28dn22dcnb2' user='lwbdaaftujgejr' port='5432' host='ec2-54-194-147-61.eu-west-1.compute.amazonaws.com' password='cda07fc755061b7a120e7fa2d8f6144dc6268aa98131ef59eeefe2fa3d32da00'")
     print("Successful D.B Connection")
 except:
     print("Connection error!")
