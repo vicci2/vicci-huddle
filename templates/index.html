@@ -36,7 +36,7 @@
                 <form action="register">
                 <button type="submit">Rgister</button>
                 </form>
-                <form action="comments" >
+                <form action="loginer"methods="POST" class="pop" >
                     <button type="button" id="btn"  data-bs-toggle="modal" data-bs-target="#comentsModal">
                         Comments
                       </button>
@@ -48,12 +48,12 @@
                               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                              <input style="text-align: center; width: 100%; color: blueviolet;background-color: darkgrey; border: chartreuse 2px solid;border-radius: 20px;" type="password" placeholder="Enter User password">
-                              <input style="margin-top: 10px; text-align: center; width: 100%; color: blueviolet;background-color: darkgrey; border: chartreuse 2px solid;border-radius: 20px;" type="text" placeholder="Enter User Name">                          
+                              <input name="username" style="text-align: center; width: 100%; color: blueviolet;background-color: darkgrey; border: chartreuse 2px solid;border-radius: 20px;" type="text" placeholder="Enter User Name">
+                              <input name="password" style="margin-top: 10px; text-align: center; width: 100%; color: blueviolet;background-color: darkgrey; border: chartreuse 2px solid;border-radius: 20px;" type="password" placeholder="Enter User password">                          
                             </div>
                             <div class="modal-footer" style="justify-content: center;">
                               <button type="button" style="width: 80%;"  class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                              <button type="button" style="width: 75%;" class="btn btn-dark">Verify</button>
+                              <button type="submit" style="width: 75%;" class="btn btn-dark">Verify</button>
                             </div>
                           </div>
                         </div>
@@ -75,7 +75,7 @@
                         </div>
                         <div class="modal-body">
 
-                          <input name="username" style="text-align: center;  width: 100%; color: blueviolet;background-color: darkgrey; border: chartreuse 2px solid;border-radius: 20px;" type="text" placeholder="Enter User Name">
+                          <input name="user_name" style="text-align: center;  width: 100%; color: blueviolet;background-color: darkgrey; border: chartreuse 2px solid;border-radius: 20px;" type="text" placeholder="Enter User Name">
                           
                           
                           <input name="password"  style="margin-top: 10px; text-align: center; width: 100%; color: blueviolet;background-color: darkgrey; border: chartreuse 2px solid;border-radius: 20px;" type="password" placeholder="Enter User password">
