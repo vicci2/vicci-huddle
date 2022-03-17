@@ -48,7 +48,9 @@
                                         Notifications
                                     </div>
                                     <div class="col-2" id="txt">
-                                        <p style="color: rgb(190, 8, 235);">Tech Vicci</p>
+                                        {% for a in name %}
+                                        <p style="color: rgb(190, 8, 235);">{{ a }}</p>
+                                        {% endfor %}                                    
                                     </div>
                                 </div>
                         </div>
