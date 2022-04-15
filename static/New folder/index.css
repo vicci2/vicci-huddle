@@ -16,6 +16,6 @@ p{color: grey;}
 #whatap{width:3%;height: 3%;border-radius: 100%;}
 
 @media only screen and (max-width: 960px) {
-    body{display:flex;flex-direction: column;}
+    body{display:block;flex-direction: column;}
     .container{transform: translateY(500px);}
 }
